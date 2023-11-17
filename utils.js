@@ -168,7 +168,7 @@ function getModelViewMatrix() {
     const rotationMatrix_Y = createRotationMatrix_Y(45 * Math.PI / 180);
     const rotationMatrix_Z = createRotationMatrix_Z(60 * Math.PI / 180);
     const rotationMatrix = multiplyMatrices(rotationMatrix_Z, multiplyMatrices(rotationMatrix_Y, rotationMatrix_X));
-    const transformationMatrix = multiplyMatrices(multiplyMatrices(rotationMatrix, scalerMatrix), translationMatrix);
+    const transformationMatrix = multiplyMatrices(translationMatrix, multiplyMatrices(rotationMatrix, scalerMatrix));
     return transformationMatrix;
 }
 
